@@ -1,0 +1,22 @@
+
+revoke execute on function public.issue_customer_qr() from public, anon;
+revoke execute on function public.join_store(text) from public, anon;
+revoke execute on function public.lookup_customer_qr(text, uuid) from public, anon;
+revoke execute on function public.award_loyalty(text, uuid, numeric, text) from public, anon;
+revoke execute on function public.redeem_reward(uuid, uuid) from public, anon;
+revoke execute on function public.validate_reward_token(text, uuid) from public, anon;
+revoke execute on function public.confirm_redemption(text, uuid) from public, anon;
+revoke execute on function public.store_stats(uuid) from public, anon;
+revoke execute on function public.is_store_owner(uuid) from public, anon;
+revoke execute on function public.handle_new_user() from public, anon, authenticated;
+revoke execute on function public.get_store_by_join_token(text) from public;
+grant execute on function public.get_store_by_join_token(text) to anon, authenticated;
+grant execute on function public.issue_customer_qr() to authenticated;
+grant execute on function public.join_store(text) to authenticated;
+grant execute on function public.lookup_customer_qr(text, uuid) to authenticated;
+grant execute on function public.award_loyalty(text, uuid, numeric, text) to authenticated;
+grant execute on function public.redeem_reward(uuid, uuid) to authenticated;
+grant execute on function public.validate_reward_token(text, uuid) to authenticated;
+grant execute on function public.confirm_redemption(text, uuid) to authenticated;
+grant execute on function public.store_stats(uuid) to authenticated;
+grant execute on function public.is_store_owner(uuid) to authenticated;
